@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/character_menu_section"
+        android:icon="@drawable/ic_superhero"
+        android:orderInCategory="1"
+        android:title="@string/characters"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/event_menu_section"
+        android:icon="@drawable/ic_calendar"
+        android:orderInCategory="2"
+        android:title="@string/events"
+        app:showAsAction="ifRoom" />
+
+</menu>

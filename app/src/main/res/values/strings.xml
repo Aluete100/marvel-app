@@ -1,0 +1,23 @@
+<resources>
+    <!-- Facebook -->
+    <string name="facebook_app_id">1513511698980831</string>
+    <!-- App -->
+    <string name="app_name">Marvel App</string>
+    <string name="toolbar_title">Marvel Challenge</string>
+    <string name="loading_overlay_title">Cargando listado</string>
+    <!-- Bottom nav -->
+    <string name="characters">Personajes</string>
+    <string name="events">Eventos</string>
+    <!-- Auth -->
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="welcome">Bienvenido!</string>
+    <string name="sign_in_message">Inicia sesion o registrate para ingresar</string>
+    <string name="no_blank_inputs">Por favor, no dejes campos vacios</string>
+    <string name="error_login">Hubo un error al intentar de ingresar</string>
+    <!-- Comics -->
+    <string name="comics_title">Comics a Discutir</string>
+
+
+</resources>
