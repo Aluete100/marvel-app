@@ -61,20 +61,6 @@ class AuthFragment : BaseFragment() {
                 )
             }
         }
-//            ).observe(viewLifecycleOwner, Observer {
-//                if (it == false) {
-//                    Toasty.error(
-//                        requireContext(),
-//                        getString(R.string.error_login),
-//                        Toast.LENGTH_LONG
-//                    ).show()
-//                } else {
-//                    if (authViewModel.loggedUser !== null) {
-//                        popBackStack()
-//                    }
-//                }
-//            })
-//        }
     }
 
     private fun setupFacebookButton() {
@@ -85,22 +71,6 @@ class AuthFragment : BaseFragment() {
         btn_facebook.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
                 authViewModel.loginWithFacebook(loginResult.accessToken)
-//                    .observe(viewLifecycleOwner, Observer {
-//                        if (it == false) {
-//                            Toasty.error(
-//                                requireContext(),
-//                                getString(R.string.error_login),
-//                                Toast.LENGTH_LONG
-//                            ).show()
-//                        } else {
-//                            Toasty.error(
-//                                requireContext(),
-//                                "Holaa",
-//                                Toast.LENGTH_LONG
-//                            ).show()
-//                            popBackStack()
-//                        }
-//                    })
             }
 
             override fun onCancel() {
@@ -114,9 +84,8 @@ class AuthFragment : BaseFragment() {
     }
 
     private fun observeData() {
-        authViewModel.loggedUser.observe(viewLifecycleOwner, Observer {
-            Log.d(TAG, ": $it")
-            if (it !== null) {
+        authViewModel.getCurrentUser().observe(viewLifecycleOwner, Observer {
+            if (it != null) {
                 popBackStack()
             }
         })

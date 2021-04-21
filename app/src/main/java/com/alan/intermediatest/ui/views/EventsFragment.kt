@@ -111,8 +111,8 @@ class EventsFragment : BaseFragment() {
     }
 
     private fun isLogged() {
-        if (authViewModel.loggedUser.value == null) {
-            navigate(R.id.authFragment)
+        if (authViewModel.getCurrentUser().value == null) {
+            navigate(R.id.action_eventsFragment_to_authFragment)
         }
     }
 }

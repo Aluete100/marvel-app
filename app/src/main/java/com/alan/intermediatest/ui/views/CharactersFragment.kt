@@ -123,7 +123,7 @@ class CharactersFragment : BaseFragment(), CharactersListAdapter.ICharacterActio
 
 
     private fun isLogged() {
-        if (authViewModel.loggedUser.value == null) {
+        if (authViewModel.getCurrentUser().value == null) {
             navigate(R.id.action_charactersFragment_to_authFragment)
         }
     }

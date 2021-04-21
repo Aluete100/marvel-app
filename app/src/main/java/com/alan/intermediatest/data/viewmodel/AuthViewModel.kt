@@ -9,28 +9,24 @@ import com.google.firebase.auth.FirebaseUser
 
 class AuthViewModel : ViewModel() {
 
-//    val loggedUser by lazy {
-//        UserRepository.currentUser()
-//    }
+    private var currentUser = MutableLiveData<FirebaseUser>()
 
-    private var loginResult = MutableLiveData<Boolean>()
-    var loggedUser = MutableLiveData<FirebaseUser>()
+    init {
+        currentUser = UserRepository.getUser()
+    }
 
     //Login with facebook
-    fun loginWithFacebook(token: AccessToken) { //: LiveData<Boolean>
-        loginResult = UserRepository.loginWithFacebook(token)
-//        return loginResult
+    fun loginWithFacebook(token: AccessToken) {
+        UserRepository.loginWithFacebook(token)
     }
 
     //function to perform login
-    fun createWithEmailAndPassword(email: String, password: String){ //: LiveData<Boolean>
-        loginResult = UserRepository.createWithEmailAndPassword(email, password)
-        loggedUser.postValue(UserRepository.currentUser())
-//        return loginResult
+    fun createWithEmailAndPassword(email: String, password: String) {
+        UserRepository.createWithEmailAndPassword(email, password)
     }
 
-    fun logout() {
-        UserRepository.logout()
+    fun getCurrentUser(): MutableLiveData<FirebaseUser> {
+        return currentUser
     }
 
 
